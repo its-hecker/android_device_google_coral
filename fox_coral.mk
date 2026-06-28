@@ -3,7 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, device/google/coral/twrp_coral.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # OrangeFox identity
 PRODUCT_NAME := fox_coral
@@ -11,6 +12,37 @@ PRODUCT_DEVICE := coral
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 4 XL
 PRODUCT_MANUFACTURER := google
+
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
+KERNEL_LD := LD=ld.lld
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_CONFIG := floral_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/msm-4.14
+TARGET_NEEDS_DTBOIMAGE := true
+
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
+PLATFORM_VERSION := 99.87.36
+PLATFORM_SECURITY_PATCH := 2127-12-31
+
+# TWRP
+TW_THEME := portrait_hdpi
+BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_DEFAULT_BRIGHTNESS := "80"
+TW_INCLUDE_CRYPTO := true
+AB_OTA_UPDATER := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+TW_USE_TOOLBOX := true
+TW_NO_HAPTICS := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_USE_FSCRYPT_POLICY := 1
+TW_LOAD_VENDOR_MODULES := "ftm5.ko"
 
 # OrangeFox flags
 OF_MAINTAINER := Hecker
