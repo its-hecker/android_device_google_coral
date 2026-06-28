@@ -54,5 +54,5 @@ TW_LOAD_VENDOR_MODULES := "ftm5.ko"
 
 # Force prepdecrypt to set security patches regardless of boot mode
 # Prevents fastboot boot detection from disabling SETPATCH on recovery-as-boot devices
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     prepdecrypt.setpatch=true
