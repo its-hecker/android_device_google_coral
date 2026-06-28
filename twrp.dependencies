@@ -22,5 +22,11 @@
     "repository": "device/google/coral-sepolicy",
     "target_path": "device/google/coral-sepolicy",
     "branch": "refs/tags/android-12.1.0_r4"
+  },
+  {
+    "remote": "aosp",
+    "repository": "device/google/coral-kernel",
+    "target_path": "device/google/coral-kernel",
+    "branch": "refs/tags/android-12.1.0_r4"
   }
 ]
