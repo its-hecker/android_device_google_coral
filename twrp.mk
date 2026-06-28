@@ -51,8 +51,3 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_USE_FSCRYPT_POLICY := 1
 TW_LOAD_VENDOR_MODULES := "ftm5.ko"
-
-# Force prepdecrypt to set security patches regardless of boot mode
-# Prevents fastboot boot detection from disabling SETPATCH on recovery-as-boot devices
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/system.prop:$(TARGET_COPY_OUT_RECOVERY)/root/prop.default
