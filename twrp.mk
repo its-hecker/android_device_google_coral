@@ -1,9 +1,6 @@
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.lz4
-KERNEL_LD := LD=ld.lld
-TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_CONFIG := floral_defconfig
-TARGET_KERNEL_SOURCE := kernel/google/msm-4.14
+TARGET_PREBUILT_KERNEL := device/google/coral-kernel/Image.lz4
 TARGET_NEEDS_DTBOIMAGE := true
 
 BOARD_USES_QCOM_FBE_DECRYPTION := true
