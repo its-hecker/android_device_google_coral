@@ -30,7 +30,7 @@ cc_library_static {
         "bootable/recovery/",
         "bootable/recovery/twrpinstall/include",
         "system/vold/",
-	"bootable/recovery/bootloader_message/include",
+        "bootable/recovery/bootloader_message/include",
     ],
     static_libs: [
         "libbase",
@@ -39,8 +39,5 @@ cc_library_static {
     ],
     shared_libs: [
         "libziparchive"
-    ], 
-    whole_static_libs: [
-	"libmisc_writer"
-    ]
+    ],
 }
